@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from django import forms
 
 class Seller(AbstractUser):
     username = models.CharField(
@@ -16,7 +16,7 @@ class Seller(AbstractUser):
         verbose_name="Телефон",
         help_text="Укажите тлф",
     )
-    tg_nick = models.Charfield(
+    tg_nick = models.CharField(
         max_length=35,
         blank=True,
         null=True,
@@ -31,5 +31,5 @@ class Seller(AbstractUser):
     REQUIRED_FIELDS = []
 
     class Meta:
-        verbose_name = 'Seller(Продавец)'
-        verbose_name_plural = 'Sellers(Продавцы)'
+        verbose_name = "Seller(Продавец)"
+        verbose_name_plural = "Sellers(Продавцы)"
